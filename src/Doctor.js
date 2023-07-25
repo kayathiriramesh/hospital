@@ -2,6 +2,32 @@ import axios from 'axios'
 import { useFormik } from 'formik'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import {Line} from "react-chartjs-2";
+  /* react-chartjs-2package install*/
+import {
+    Chart as ChartJS,
+    ArcElement,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+  } from 'chart.js';
+  
+  ChartJS.register(
+    CategoryScale,
+    ArcElement,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+  );
+  
+
 
 function Doctor() {
     const navigate=useNavigate(); 
@@ -28,6 +54,7 @@ function Doctor() {
     };
     
     return (
+      <>
       <div className="container">
         <div className='row'>
           <div className='col-lg-6'>
@@ -61,8 +88,35 @@ function Doctor() {
               </tbody>
             </table>
           </div>
-        </div>
+          <div className="col-lg-8">
+                <Line 
+                        options={{
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                position: 'top',
+                                },
+                                title: {
+                                display: true,
+                                text: 'Chart.js Line Chart',
+                                },
+                            },
+                            }} 
+                            data={{
+                                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                datasets: [{
+                                label: 'My First Dataset',
+                                data: [65, 59, 80, 81, 56, 55, 40],
+                                fill: false,
+                                borderColor: 'rgb(75, 192, 192)',
+                                tension: 0.1
+                            },],
+                        }}
+                    />
+            </div>    
+                </div>
       </div>
+      </>
     );
   }
 

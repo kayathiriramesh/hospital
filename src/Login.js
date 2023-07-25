@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { config } from './config';
 import './login.css';
 
 
@@ -14,20 +13,7 @@ function Login() {
       password: ""
     },
     onSubmit: async (values) => {
-      {/*try {
-        const login = await axios.post('https://markble-backendcode.onrender.com/login', values);
-        alert(login.data.message);
-        window.localStorage.setItem("token",JSON.stringify(login.data.token))
-        window.localStorage.setItem("profile",JSON.stringify(login.data.profile))
-        if(login.data.message=="successfully logged in"){
-        navigate("/portal/dashboard");
-        }else{
-          navigate("/register");
-        }
-      } catch (error) {
-        console.log("login error")
-        
-      } */}
+     
       try{
         const login = await axios.post("https://markble-backendcode.onrender.com/login",values) 
         window.localStorage.setItem("token",JSON.stringify(login.data.token))

@@ -5,7 +5,6 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "../src/sb-admin-2.min.css"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './Login';
-import User from './User';
 import Register from './Register';
 import Portal from './Portal/Dashboard';
 import Reception from './Reception';
@@ -20,7 +19,6 @@ function App() {
     <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/user" element={<User/>} />
         <Route path="/portal/dashboard" element={<Portal/>} />
         <Route path="/reception" element={<Reception/>} />
         <Route path="/doctor" element={<Doctor/>} />
