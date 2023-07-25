@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+.portal{
+  display:flex;
+}
+
+.col-2{
+height: 250px;
+width:20px;
+background-color:#61dafb;
+border-radius: 15px 50px;
+border:solid 3px;
+padding:10px;
+text-align: center;
+margin: 100px;
+}
+img{
+  height: 150px;
+  width: 150px;
+  border-radius: 75px 75px;
+  object-fit: cover;
+  
+}
