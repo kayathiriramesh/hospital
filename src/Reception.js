@@ -64,7 +64,7 @@ function Paticent() {
           formik.resetForm()
         }  catch (error) {
           console.log(error);
-          navigate("/portal/dashboard")
+          navigate("/reception")
         }
       }
     });
@@ -83,7 +83,7 @@ function Paticent() {
         });
         setPaticentList(paticent.data)
       } catch (error) {
-        navigate("/portal/dashboard")
+        navigate("/reception")
       }
     };
   
@@ -107,7 +107,7 @@ function Paticent() {
         setEdit(true);
       
       } catch (error) {
-        navigate("/portal/dashboard")
+        navigate("/reception")
       }
     };
     const handleDelete= async (id) =>{
@@ -119,7 +119,7 @@ function Paticent() {
       })
         getPaticents();
       } catch (error) {
-        navigate("/portal/dashboard")
+        navigate("/reception")
       }
     };
     return (
